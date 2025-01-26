@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR WORLD</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom animations and styles */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .project-card {
+            transition: all 0.3s ease;
+            perspective: 1000px;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05) rotateY(10deg);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .animated-section {
+            animation: slideIn 1s ease forwards;
+            opacity: 0;
+        }
+
+        .project-icon {
+            transition: all 0.3s ease;
+        }
+
+        .project-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-blue-900 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-white">AR WORLD</div>
+            <div class="space-x-4">
+                <a href="#about" class="hover:text-blue-300 transition">About</a>
+                <a href="#contact" class="hover:text-blue-300 transition">Contact</a>
+                <a href="#projects" class="hover:text-blue-300 transition">Explore</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex items-center justify-center text-center pt-16 animated-section">
+        <div class="max-w-3xl px-4">
+            <h1 class="text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                AR WORLD 
+            </h1>
+            <p class="text-xl mb-8 text-gray-300">
+                Innovative AR Solutions Bridging Technology and Human Interaction
+            </p>
+            <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition transform hover:scale-105 inline-block">
+                Explore Features
+            </a>
+        </div>
+    </header>
+   
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-900 bg-opacity-50 animated-section">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-white">Features</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Translator Project -->
+                <div class="project-card bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 text-center">
+                    <div class="project-icon text-5xl mb-4">🌐</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-400">Translator</h3>
+                    <p class="text-gray-300 mb-4">
+                        Advanced translation tool leveraging AR technology for real-time multilingual communication.
+                    </p>
+                    <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-full transition">
+                        Learn More
+                    </button>
+                </div>
+
+                <!-- Sign Language Project -->
+                <div class="project-card bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 text-center">
+                    <div class="project-icon text-5xl mb-4">🤲</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-400">Sign Language</h3>
+                    <p class="text-gray-300 mb-4">
+                        Advanced AR-powered sign language translation and learning platform.
+                    </p>
+                    <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-full transition">
+                        Learn More
+                    </button>
+                </div>
+
+                <!-- Voice Assistant Project -->
+                <div class="project-card bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 text-center">
+                    <div class="project-icon text-5xl mb-4">🎙️</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-400">Voice Assistant</h3>
+                    <p class="text-gray-300 mb-4">
+                        Intelligent AR voice assistant with natural language processing.
+                    </p>
+                    <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-full transition">
+                        Learn More
+                    </button>
+                </div>
+
+                <!-- Image Processing Project -->
+                <div class="project-card bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 text-center">
+                    <div class="project-icon text-5xl mb-4">🖼️</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-400">Image Processing</h3>
+                    <p class="text-gray-300 mb-4">
+                        Advanced AR image processing and computer vision solutions.
+                    </p>
+                    
+                    <a href="http://127.0.0.1:5000/object_recog.html" class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-full transition">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-opacity-50 animated-section">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8 text-white">About AR Tracker</h2>
+            <p class="text-xl text-gray-300 leading-relaxed">
+                AR Tracker is an innovative platform pushing the boundaries of augmented reality technology. 
+                Our mission is to create intuitive, accessible, and transformative technological solutions 
+                that bridge communication gaps and enhance human interaction through cutting-edge VR applications.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 bg-opacity-50 animated-section">
+        <script>
+            document.querySelector('form').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formData = {
+                    name: document.querySelector('input[placeholder=\"Your Name\"]').value,
+                    email: document.querySelector('input[placeholder=\"Your Email\"]').value,
+                    message: document.querySelector('textarea').value
+                };
+        
+                const response = await fetch('http://localhost:5000/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+        
+                const result = await response.json();
+                alert(result.message);
+            });
+        </script>
+
+
+
+        
+        <div class="max-w-md mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8 text-white">Get in Touch</h2>
+            <form class="bg-gray-800 p-8 rounded-lg shadow-lg">
+                <input type="text" placeholder="Your Name" class="w-full mb-4 p-3 rounded bg-gray-700 text-white">
+                <input type="email" placeholder="Your Email" class="w-full mb-4 p-3 rounded bg-gray-700 text-white">
+                <textarea placeholder="Your Message" class="w-full mb-4 p-3 rounded bg-gray-700 text-white" rows="4"></textarea>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full w-full transition">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black bg-opacity-50 py-6 text-center">
+        <p class="text-gray-400">© 2024 AR Tracker. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animated-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+<style>
+    /* Custom animations and styles */
+    @keyframes slideIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animated-section {
+        animation: slideIn 1s ease forwards;
+        opacity: 0;
+    }
+</style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-blue-900 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-white">AR WORLD</div>
+            <div class="space-x-4">
+                <a href="#about" class="hover:text-blue-300 transition">About</a>
+                <a href="#contact" class="hover:text-blue-300 transition">Contact</a>
+                <a href="#projects" class="hover:text-blue-300 transition">Explore</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex items-center justify-center text-center pt-16 animated-section">
+        <div class="max-w-3xl px-4">
+            <h1 class="text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                AR WORLD 
+            </h1>
+            <p class="text-xl mb-8 text-gray-300">
+                Innovative AR Solutions Bridging Technology and Human Interaction
+</html>
+
+
+<footer class="bg-black bg-opacity-50 py-6 text-center">
+    <div class="flex flex-col items-center">
+        <p class="text-gray-400 mb-4">© 2024 AR Tracker. All Rights Reserved.</p>
+        <a href="login.html" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-full transition-transform transform hover:scale-105 shadow-lg hover:shadow-xl mt-4 inline-block">
+            Logout
+        </a>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+</body>
+</html>

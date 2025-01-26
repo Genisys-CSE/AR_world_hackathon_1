@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR WORLD</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animated-section {
+            animation: slideIn 1s ease forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-blue-900 text-white min-h-screen">
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full animated-section">
+            <h2 class="text-3xl font-bold text-center mb-6">Welcome to AR WORLD</h2>
+            
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Your Email" class="w-full mb-4 p-3 rounded bg-gray-700 text-white" required>
+                <input type="password" id="login-password" placeholder="Your Password" class="w-full mb-4 p-3 rounded bg-gray-700 text-white" required>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full w-full transition mb-4">
+                    Login
+                </button>
+                <ul class="flex justify-center space-x-4">
+                    <li><a href="#" id="show-login" class="text-blue-400 hover:underline">Login</a></li>
+                    <li><a href="#" id="show-signup" class="text-blue-400 hover:underline">Sign Up</a></li>
+                </ul>
+            </form>
+            
+            <form id="signup-form" class="hidden">
+                <input type="text" id="signup-name" placeholder="Your Name" class="w-full mb-4 p-3 rounded bg-gray-700 text-white" required>
+                <input type="email" id="signup-email" placeholder="Your Email" class="w-full mb-4 p-3 rounded bg-gray-700 text-white" required>
+                <input type="password" id="signup-password" placeholder="Create Password" class="w-full mb-4 p-3 rounded bg-gray-700 text-white" required>
+                <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full w-full transition mb-4">
+                    Sign Up
+                </button>
+                <ul class="flex justify-center space-x-4">
+                    <li><a href="#" id="show-login-after-signup" class="text-blue-400 hover:underline">Login</a></li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+document.getElementById('login-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+    
+    // Basic validation
+    if (email && password) {
+        // After successful login, redirect to the main page
+        window.location.href = "index.html";
+    } else {
+        alert('Please fill in all fields');
+    }
+});
+
+        // Form toggle functions
+        document.getElementById('show-login').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('login-form').classList.remove('hidden');
+            document.getElementById('signup-form').classList.add('hidden');
+        });
+
+        document.getElementById('show-signup').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('signup-form').classList.remove('hidden');
+            document.getElementById('login-form').classList.add('hidden');
+        });
+
+        document.getElementById('show-login-after-signup').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('login-form').classList.remove('hidden');
+            document.getElementById('signup-form').classList.add('hidden');
+        });
+
+        // Form submission handlers
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            // Basic validation
+            if (email && password) {
+                alert('Login submitted with: ' + email);
+                // Here you would typically send data to a backend
+            } else {
+                alert('Please fill in all fields');
+            }
+        });
+
+        document.getElementById('signup-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            
+            // Basic validation
+            if (name && email && password) {
+                alert('Signup submitted with: ' + name + ', ' + email);
+                // Here you would typically send data to a backend
+            } else {
+                alert('Please fill in all fields');
+            }
+        });
+    </script>
+</body>
+</html>
